@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Temperature converter</title>
+</head>
+<body>
+    <div class="main">
+        <h1>Temperature Converter</h1>
+        <div class="input">
+            <input type="number" id="inputTemp">
+            <select id="selectInputUnit">
+                <option value="c"> Celsius (°C)</option>
+                <option value="f">Fahrenheit (°F)</option>
+                <option value="k">Kelvin (k)</option>
+            </select>
+        </div>
+        <div class="equal">
+            <p class="equal-sign">&#61</p>
+        </div>
+        <div class="output">
+            <input type="number" id="outputTemp">
+            <select id="selectOutputUnit">
+                <option value="c"> Celsius (°C)</option>
+                <option value="f" selected>Fahrenheit (°F)</option>
+                <option value="k">Kelvin (k)</option>
+            </select>
+        </div><br><br><br>
+        <div>
+        <p class="credit"  >designed by  <a target="_blank" href="https://www.linkedin.com/in/mr-vishwaj-68268b214/"> <img src="vk_logo.png"></a> </p>
+        </div>
+    </div>
+
+
+    <script>
+        function convert() {
+            var inputTemp =parseFloat(document.getElementById('inputTemp').value);
+            var selectInputUnit = document.getElementById('selectInputUnit').value;
+            var selectOutputUnit = document.getElementById('selectOutputUnit').value;
+            var outputTemp = document.getElementById('outputTemp');
+
+            if (selectInputUnit === selectOutputUnit) {
+                outputTemp.value = inputTemp;
+            }else if (selectInputUnit ==="c" && selectOutputUnit === "f") {
+                outputTemp.value = (inputTemp * 9/5) +32;
+            }else if (selectInputUnit === "c" && selectOutputUnit === "k") {
+                outputTemp.value = inputTemp + 273.15;
+            }else if (selectInputUnit === "f" && selectOutputUnit === "c") {
+                outputTemp.value = (inputTemp - 32) * 5/9;
+            }else if (selectInputUnit === "f" && selectOutputUnit === "k") {
+                outputTemp.value = (inputTemp + 459.67) * 5/9;
+            }else if (selectInputUnit === "k" && selectOutputUnit === "c") {
+                outputTemp.value = inputTemp - 273.15;
+            }else if (selectInputUnit === "k" && selectOutputUnit ==="f") {
+                outputTemp.value = (inputTemp * 9/5) - 459.67;
+            }
+        }
+        var inputElement = document.getElementById('inputTemp');
+        inputElement.addEventListener('input',convert)
+    </script>
+</body>

@@ -1,0 +1,137 @@
+body{background: rgb(246, 249, 204);
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.main {
+    width:600px;
+    height: 30%;
+    background-color: #ebc5c5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 05px 5px 4px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to{
+        opacity: 1;
+        transform:translateY(0) ;
+    }
+}
+h1{
+    text-align: center;
+    margin: 30px;
+    color: #1e0d0d;
+    animation: slidedown 0.8s ease-in-out;
+}
+@keyframes slidedown {
+    from{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.input{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: start;
+    animation: input 0.5s ease-in-out;
+}
+@keyframes input {
+    from{
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+.equal{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+.output{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-end;
+    animation: output 0.5s ease-in-out;
+}
+@keyframes output {
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+.input input, .output input{
+    height: 50px;
+    width: 250px;
+}
+.input select , .output select{
+    height: 30px;
+    width: 256px;
+}
+.equal-sign{
+    font-size:40px;
+    margin: 0;
+}
+select{
+    border: 1px solid #080808;
+    border-radius: 0 0 10px 10px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #1a0808f4;
+    background-color: #f1bcbc;
+    background-repeat: no-repeat;
+    background-position: right center;
+    padding-right: 24px;
+    cursor: pointer;
+    text-align:center;
+}
+input{
+    border: 1px solid #080808;
+    border-radius: 10px 10px 0 0;
+    font-family: Arial, sans-serif;
+    font-size: 40px;
+    color: #1a0808f4;
+    text-align: center;
+}
+.credit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .credit img{
+    height: 50px;
+    width: 50px;
+    animation: image 1s infinite ease;
+  }
+  @keyframes image{
+    0%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(2);
+    }
+  }
+  
+  
